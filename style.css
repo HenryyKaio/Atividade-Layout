@@ -9,6 +9,8 @@ header {
     height:100px;
     text-align: center;
     padding: 10px 0;
+    position:fixed;
+    width:100%;
 }
 
 header ul{
@@ -19,19 +21,63 @@ header ul{
     margin-top: 25px;
 }
 
-a {
-    text-decoration: none;
-    color:white;
-    font-size:medium;
+header li{
+    cursor: pointer;
 }
 
-.dropdown li {
-    display:none;
+
+/* Estiliza os links principais */
+.menu > ul > li > a {
+  display: block;
+  color: white;
+  font-size: 23px;
+  text-align: center;
+  padding: 10px 10px;
+  color:#ff4043;
+  text-decoration: none;
+}
+
+/* Altera a cor ao passar o mouse */
+.menu > ul > li > a:hover {
+  background-color: #273746;
+}
+
+/* --- ESTILOS DO DROPDOWN --- */
+
+/* Oculta o submenu por padrão */
+.menu ul .submenu {
+  display: none;
+  position: absolute;
+  margin-top:3px;
+  background-color: #19242f;
+  min-width: 160px;
+  box-shadow: 0px 8px 16px 0px rgba(0,0,0,0.2);
+  z-index: 1;
+}
+
+/* Mostra o submenu quando o mouse passa por cima do item pai */
+.menu ul .dropdown:hover .submenu {
+  display: block;
+}
+
+/* Estiliza os links dentro do submenu */
+.menu ul .submenu li a {
+  color:#ff4043;
+  padding: 12px 16px;
+  text-decoration: none;
+  display: block;
+  text-align: left;
+}
+
+/* Altera a cor dos links do submenu ao passar o mouse */
+.menu ul .submenu li a:hover {
+  background-color: #273746;
 }
 
 
 .sidebar {
     box-sizing: border-box;
+    margin-top: 120px;
     width: 25%;
     padding: 15px;
     float:left;
@@ -43,6 +89,7 @@ a {
 
 .main-content {
     box-sizing: border-box;
+    margin-top: 120px;
     width:75%;
     padding: 15px;
     float:left;
